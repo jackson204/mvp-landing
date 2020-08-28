@@ -30,7 +30,7 @@ python manage.py createsuperuser
 ```
 python manage.py startapp emails
 
-接下來我們要去 emails/settings 註冊我們這個app，讓他可以讀取到
+接下來我們要去 mvp-landing/settings 註冊我們這個app，讓他可以讀取到
 到settings.py 找到 INSTALLED_APPS 這個 list， 加入 ‘emails’
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -59,4 +59,16 @@ admin.site.register(EmailEntry)
 #### 8.Routing View _urls.py_
 ```
   Add a URL to urlpatterns:  path('emails/', include('emails.urls'))
+```
+
+#### 9.Setting up Django Templates 創立模板
+```
+回到根目錄（mvp-loading) 創立一個 templates 資料夾,在裡面建立一個Html
+mvp-landing/settings
+TEMPLATES = [
+{
+'BACKEND': 'django.template.backends.django.DjangoTemplates',
+# 加入templates目錄
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+#…
 ```

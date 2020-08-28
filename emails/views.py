@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 # Create your views here.
 # Model -> View -> Template
+# Model -> View -> React.js / Vue.js
 from .models import EmailEntry
 
 
@@ -12,7 +13,8 @@ def email_entry_get_view(request, id=None, *args, **kwargs):
         obj = EmailEntry.objects.get(id=id)
     except EmailEntry.DoesNotExist:
         raise Http404
-    return HttpResponse(f"<h1>Hello {obj.email}</h1>")
+    # return HttpResponse(f"<h1>Hello {obj.email}</h1>")
+    return render(request, "get.html", {"object": obj, "email": "aaa@gmailc.om"})
 
 
 def email_entry_create_view():
