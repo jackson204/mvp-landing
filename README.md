@@ -56,3 +56,7 @@ python manage.py migrate
 ```
 admin.site.register(EmailEntry)
 ```
+#### 8.Routing View _urls.py_
+```
+  Add a URL to urlpatterns:  path('emails/', include('emails.urls'))
+```
