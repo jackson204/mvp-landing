@@ -7,7 +7,11 @@ from .models import EmailEntry
 
 def email_entry_get_view(request, id=None, *args, **kwargs):
     # get a single item stored in the database
-    obj = EmailEntry.objects.get(id=1)
+    # print(args, kwargs)
+    try:
+        obj = EmailEntry.objects.get(id=id)
+    except EmailEntry.DoesNotExist:
+        raise Http404
     return HttpResponse(f"<h1>Hello {obj.email}</h1>")
 
 

@@ -20,5 +20,5 @@ from emails.views import email_entry_get_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('emails/1/', email_entry_get_view),
+    path('emails/<int:id>/', email_entry_get_view),
 ]
