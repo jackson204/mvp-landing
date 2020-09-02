@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Not woeking : {email}</h1>
-<h1>Woeking : {{object.email}}</h1>
-</body>
+{% load static %}
+<!doctype html>
+<html>
+    <body>
+        <img src="{% static 'img/beach.jpg' %}" alt='Beach' />
+        <h1>Not working: {email}</h1>
+        <h1>Working: {{ object.email }}</h1>
+    </body>
 </html>

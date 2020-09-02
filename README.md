@@ -63,7 +63,7 @@ admin.site.register(EmailEntry)
 
 #### 9.Setting up Django Templates 創立模板
 ```
-回到根目錄（mvp-loading) 創立一個 templates 資料夾,在裡面建立一個Html
+回到根目錄（mvp-loading) 創立一個 templates 資料夾,在裡面建立一個.Html
 mvp-landing/settings
 TEMPLATES = [
 {
@@ -71,4 +71,17 @@ TEMPLATES = [
 # 加入templates目錄
 'DIRS': [os.path.join(BASE_DIR, 'templates')],
 #…
+```
+#### 10.Static Files
+```
+根目錄（mvp-loading) 創立一個 static 資料夾,在裡面建立分別建立三個資料夾 img js  css
+
+mvp-landing/settings
+STATICFILES_DIRS = [
+    
+    os.path.join(BASE_DIR, "static"),
+
+]
+{% load static %}
+<img src="{% static "my_app/example.jpg" %}" alt="My image">
 ```
