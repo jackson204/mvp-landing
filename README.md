@@ -85,3 +85,16 @@ STATICFILES_DIRS = [
 {% load static %}
 <img src="{% static "my_app/example.jpg" %}" alt="My image">
 ```
+#### 11.Model Form
+```
+Django提供了一個簡便的方法來產生Form，它稱做Model Form。使用Model Form我們就可以利用簡單的幾行宣告，將我們設定的Model轉為Form的形式。
+EmailEntry Model
+寫成Model Form形式:
+from django import forms
+from .models import EmailEntry
+class EmailEntryForm(forms.ModelForm):
+    class Meta:
+        model = EmailEntry //model填入對應之Model
+        fields = ['email'] //fields需填入此Form要包含的欄位(Fields)或是可以使用 fields= '__all__' 來指定全部的欄位都須包含。
+view將上面所定義的ModelForm呈現到畫面上。
+```
